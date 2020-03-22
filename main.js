@@ -38,7 +38,7 @@ function weirdItems(jsonObj) {
         article.appendChild(h2);
         article.appendChild(p1);
         article.appendChild(p2);
-        article.appendChild(ul);
+        article.appendChild(p3);
         section.appendChild(article);
 
     }
