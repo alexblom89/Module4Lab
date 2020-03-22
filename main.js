@@ -2,7 +2,7 @@
 //Alex Blom - 867295
 //3/21/2020
 
-let requestURL = 'https://alexblom89.github.io/json/pizza.json';
+let requestURL = 'https://alexblom89.github.io/Module4Lab/weird.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -28,7 +28,7 @@ function weirdItems(jsonObj) {
         let p3 = document.createElement('p');
 
         let section = document.querySelector('section');
-        img.setAttribute('src', 'https://alexblom89.github.io/JSON/assets/' + weirdItems[i].image);
+        img.setAttribute('src', 'https://alexblom89.github.io/Module4Lab/resources/' + weirdItems[i].image);
         img.setAttribute('alt', weirdItems[i].image);
         h2.textContent = weirdItems[i].name;
         p1.textContent = 'Price' + weirdItems[i].price;
@@ -43,3 +43,15 @@ function weirdItems(jsonObj) {
 
     }
 }
+
+function loadAsset(url, type, callback) {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.responseType = type;
+    xhr.onload = function() {
+        callback(xhr.response);
+    };
+    xhr.send();
+}
+
+loadAsset('')
