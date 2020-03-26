@@ -16,7 +16,7 @@ request.onload = function() {
 
 function weirdItems(jsonObj) {
 
-    let weirdItems =jsonObj.weirdItems;
+    let weirdItems = jsonObj.weirdItems;
 
     for(let i = 0; i < weirdItems.length; i++) {
 
@@ -26,14 +26,14 @@ function weirdItems(jsonObj) {
         let p1 = document.createElement('p');
         let p2 = document.createElement('p');
         let p3 = document.createElement('p');
-
         let section = document.querySelector('section');
+
         img.setAttribute('src', 'https://alexblom89.github.io/Module4Lab/resources/' + weirdItems[i].image);
         img.setAttribute('alt', weirdItems[i].image);
         h2.textContent = weirdItems[i].name;
-        p1.textContent = 'Price' + weirdItems[i].price;
-        p2.textContent = 'Size' + weirdItems[i].size;
-        p3.texContent = 'Details' + weirdItems[i].details;
+        p1.textContent = 'Price: ' + weirdItems[i].price;
+        p2.textContent = 'Details: ' + weirdItems[i].details;
+
         article.appendChild(img);
         article.appendChild(h2);
         article.appendChild(p1);
@@ -43,15 +43,3 @@ function weirdItems(jsonObj) {
 
     }
 }
-
-function loadAsset(url, type, callback) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.responseType = type;
-    xhr.onload = function() {
-        callback(xhr.response);
-    };
-    xhr.send();
-}
-
-loadAsset('')
